@@ -5,19 +5,20 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class ReservationRoom implements Serializable{
-    @EmbeddedId
-    private ReservableRoomId reservableRoomId;
+public class ReservationRoom implements Serializable {
+  @EmbeddedId
+  private ReservableRoomId reservableRoomId;
 
-    @ManyToOne
-    @JoinColumn(name = 'room_id', insertable = false, updatable = false)
-    @MapsId("roomId")
-    private MeetingRoom meetingRoom;
+  @ManyToOne
+  @JoinColumn(name = 'room_id', insertable = false, updatable = false)
+  @MapsId("roomId")
+  private MeetingRoom meetingRoom;
 
-    public ReservableRoom(ReservableRoomId reservableRoomId){
-        this.reservableRoomId = reservableRoomId;
-    }
+  public void ReservableRoom(ReservableRoomId reservableRoomId) {
+    this.reservableRoomId = reservableRoomId;
+  }
 
-    public ReservableRoom(){}
+  public void ReservableRoom() {
+  }
 
 }
