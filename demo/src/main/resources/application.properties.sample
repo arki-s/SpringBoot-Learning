@@ -1,0 +1,10 @@
+#please replace *** and remove .sample from this file
+spring.jpa.database=POSTGRESQL
+spring.datasource.url=jdbc:postgresql://localhost:5432/***
+spring.datasource.username=***
+spring.datasource.password=***
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.properties.hibernate.format_sql=true
+spring.datasource.sql-script-encoding=UTF-8
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.hibernate.type.descriptor.sql.BasicBinder=TRACE
