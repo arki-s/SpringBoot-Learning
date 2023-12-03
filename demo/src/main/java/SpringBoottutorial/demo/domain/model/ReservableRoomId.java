@@ -42,4 +42,23 @@ public class ReservableRoomId implements Serializable{
         }else if (!roomId.equals(other.roomId)) return false;
         return true;
     }
+
+    //  ここからgetter setter
+
+
+    public Integer getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(Integer roomId) {
+        this.roomId = roomId;
+    }
+
+    public LocalDate getReservedDate() {
+        return reservedDate;
+    }
+
+    public void setReservedDate(LocalDate reservedDate) {
+        this.reservedDate = reservedDate;
+    }
 }
