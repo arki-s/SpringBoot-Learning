@@ -24,7 +24,6 @@ public class Reservation implements Serializable {
 
   //  ここからgetter setter
 
-
   public Integer getReservationId() {
     return reservationId;
   }
