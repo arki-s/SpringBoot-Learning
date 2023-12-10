@@ -21,8 +21,8 @@ public class Task implements Serializable {
   @Column(length = 200, nullable = true)
   private String comment;
 
-  @Column(columnDefinition = "boolean default false")
-  private Boolean completed;
+  @Column
+  private Boolean completed = false;
 
   public int getTaskId() {
     return taskId;

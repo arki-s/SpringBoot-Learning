@@ -10,6 +10,25 @@
 
 <body>
 <h1>タスクマネージャーの編集ページ</h1>
+<form method="post" th:action="@{/task/edit}" th:object="${formModel}">
+    <input type="hidden" name="taskId" th:value="*{taskId}">
+    <div class="mb-3">
+        <label>タスク名</label>
+        <input type="text" class="form-control" name="name" th:value="*{name}">
+    </div>
+    <div class="mb-3">
+        <label>タスク詳細</label>
+        <textarea class="form-control" name="comment" th:text="*{comment}"></textarea>
+    </div>
+    <div class="mb-3">
+        <label>ステータス</label>
+        <select th:field="*{completed}">
+            <option th:value="false">未完了</option>
+            <option th:value="true">完了</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">編集</button>
+</form>
 
 </body>
 

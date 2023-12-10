@@ -12,6 +12,7 @@
   <h1>タスクマネージャーのインデックスページ</h1>
   <ul th:each="task : ${taskList}">
     <li th:text="${task.name}"></li>
+    <a th:href="@{'task/' + ${task.taskId} + '/edit'}" class="btn btn-primary">編集</a>
   </ul>
 <a th:href="@{task/create}" class="btn btn-primary">タスク作成</a>
 
