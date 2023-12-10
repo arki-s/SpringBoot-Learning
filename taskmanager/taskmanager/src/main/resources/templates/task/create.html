@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="jp" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Index</title>
+</head>
+
+<body>
+<h1>タスクマネージャーの新規作成ページ</h1>
+<form method="post" th:action="@{/task/create}" th:object="${formModel}">
+    <div class="mb-3">
+        <label>タスク名</label>
+        <input type="text" class="form-control" name="name" th:value="*{name}">
+    </div>
+    <div class="mb-3">
+        <label>タスク詳細</label>
+        <textarea class="form-control" name="comment" th:value="*{comment}"></textarea>
+    </div>
+        <button type="submit" class="btn btn-primary">作成</button>
+</form>
+
+</body>
+
+</html>
