@@ -54,4 +54,12 @@ public class TasksController {
     taskRepository.saveAndFlush(task);
     return new ModelAndView("redirect:/");
   }
+
+  @Transactional
+  @PostMapping("task/{taskId}/delete")
+  public ModelAndView delete(ModelAndView mav, @RequestParam Integer taskId){
+    taskRepository.deleteById(taskId);
+
+    return new ModelAndView("redirect:/");
+  }
 }

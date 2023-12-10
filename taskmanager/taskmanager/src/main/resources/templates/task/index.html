@@ -13,6 +13,10 @@
   <ul th:each="task : ${taskList}">
     <li th:text="${task.name}"></li>
     <a th:href="@{'task/' + ${task.taskId} + '/edit'}" class="btn btn-primary">編集</a>
+    <form th:action="@{'/task/' + ${task.taskId} + '/delete'}" method="post" onSubmit="return check()">
+      <input type="hidden" name="taskId" th:value="${task.taskId}" />
+      <input type="submit" value="削除" class="btn btn-danger" />
+    </form>
   </ul>
 <a th:href="@{task/create}" class="btn btn-primary">タスク作成</a>
 
@@ -20,3 +24,14 @@
 </body>
 
 </html>
+
+<script>
+  function check() {
+      if (window.confirm('このタスクを削除しますか？')) {
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+</script>
