@@ -7,6 +7,7 @@
 </head>
 <body>
 <div layout:fragment="content">
+        <div class="container-index">
     <h1>Create New Task</h1>
     <form method="post" th:action="@{/task/create}" th:object="${formModel}">
         <div class="mb-3">
@@ -19,6 +20,9 @@
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
+            <a th:href="@{/}">Back to Index</a>
+        </div>
+
 </div>
 <style layout:fragment="style"></style>
 <script layout:fragment="script"></script>

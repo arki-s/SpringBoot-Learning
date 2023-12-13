@@ -1,5 +1,6 @@
 package tsk.taskmanager.app.Controller;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
@@ -62,4 +63,38 @@ public class TasksController {
 
     return new ModelAndView("redirect:/");
   }
+
+  @PostConstruct
+  public void init(){
+    Task t1 = new Task();
+    t1.setName("Reading book");
+    t1.setComment("at least 30 minutes");
+    t1.setCompleted(false);
+    taskRepository.saveAndFlush(t1);
+
+    Task t2 = new Task();
+    t2.setName("FitBoxing");
+    t2.setComment("at least 40 minutes");
+    t2.setCompleted(true);
+    taskRepository.saveAndFlush(t2);
+
+    Task t3 = new Task();
+    t3.setName("Watering Flowers");
+    t3.setComment("everyday");
+    t3.setCompleted(true);
+    taskRepository.saveAndFlush(t3);
+
+    Task t4 = new Task();
+    t4.setName("Not to eat sweets");
+    t4.setComment("eat vegetables instead");
+    t4.setCompleted(false);
+    taskRepository.saveAndFlush(t4);
+
+    Task t5 = new Task();
+    t5.setName("playing video games");
+    t5.setComment("at most 2 hours");
+    t5.setCompleted(true);
+    taskRepository.saveAndFlush(t5);
+  }
+
 }
